@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head><title>HOME</title>
+  <style>
+    marquee{
+      background-color: red;
+      width: 100%;
+      height: 50px;
+      padding: 
+
+    }
+  </style>
+</head>
+<body>
+  <!-----------------navigation bar------------------>
+  {% include "navigationbar.html" %}
+   <!------------------- end navigation bar --------->
+
+   <marquee onmouseover="stop()" onmouseout="start()">
+     {% for news in newsData %}
+     <a href="newsDetails/{{news.id}}">
+        {{news.news_title}} &nbsp;&nbsp;
+     {% endfor %}
+   </marquee>
+ <div style="padding-left:16px">
+ <center> <h2>PK RENTAL CARS</h2><hr/>
+  <i><p>ENJOY THE RIDE</p></i></center>
+ </div>
+<frameset rows="30%,40%,30%">
+  <frame name="top"src= "frame1.html">
+  <frame name="main"src="frame2.html">
+  <frame name="bottom"src="frame3.html">
+  </frameset>
+<center><img src="{% static 'cars3.jfif' %}" height="100%",width="100%"></center><hr/>
+<b><center>MARKET RENTAL CARS PRICES</center></b>
+<table border="5" bgcolor="pink" width=100% height=40% cellpadding="13" cellspacing="0">
+<caption>CARS PRICES</caption>
+<tr><th>CARS</th><td>PRICES PER HOURS</td></tr>
+<tr><td>Mahindra Marazzo</td><td>$10</td></tr>
+<tr><td>Toyota Innova Crysta</td><td>$8</td></tr>
+<tr><td>Maruti Suzuki Ertiga</td><td>$12</td></tr>
+<tr><td>Mahindra XUV500</td><td>$15</td></tr>
+</table>
+<p><h1><i>CARS AVAILABLE</i></h1></p>
+<ul type="bullet">
+<li>MAHINDRA MARAZZRO</li>
+<a href="mahinrda.html">
+<center><img src="{% static 'mahindra_marazzaro.jpg' %}"></center></a>
+<li>TOYOTA INNOVA CRYSTA </li>
+<a href="toyota.html">
+<center><img src="/static/toyota-innova.jpg"></center></a>
+<li>MARUTI SUZUKI ERTIGA</li>
+<center><img src="/static/maruti-suzuki.jpg"></center>
+<li>HONDA BR-V</li>
+<center><img src="/static/honda-br.jpg"></center><br>
+<!------------------------------------login form code------------------------------------------->
+ {% include "loginform.html" %}
+<!-------------------------------------login form code end---------------------------------------->
+<img src="/static/cars1.jfif" width=50% ><img src="/static/cars2.jfif" width=50%>
+<img src="/static/cars4.jfif" width=50%><img src="/static/mahindra_marazzaro.jpg" width="47%">
+
+<hr/><video width="400" controls align="center">
+  <source src="/static/carsvideo.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML video.
+</video>
+<p>
+Video courtesy of 
+<a href="/static/carsvideo.mp4">rental cars</a>.
+</p>
+<!--------------------------------------------------------------HEADER FRAME--------------->
+<frameset cols="25%,50%,25%">
+  <frame name="left"> this is first frame</frame>
+  <frame name="center">this is second frame</frame>
+  <frame name="right">this is third frame</frame>
+</frameset>
+<script>
+  function focus(element)
+  {
+      document.getElementById("fname").style.background = "yellow";
+  }
+</script>
+<!--------------------------------footer start----------------------->
+{% include "footer.html" %}
+<!-------------------------------footer end----------------------->
+</body>
+</html>
+
